@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Employee</title>
+</head>
+<body>
+<h1>Create Employee</h1>
+<hr>
+
+<form action="#" th:action="@{/employees/save}" th:object="${employee}" method="post">
+    <p> Mobile Number: <input type="text" th:field="*{mobileNumber}" ></p>
+    <p> Gender: <input type="radio" th:field="*{gender}" value="MALE" th:text="Male">
+                <input type="radio" th:field="*{gender}" value="FEMALE" th:text="Female">
+                <input type="radio" th:field="*{gender}" value="OTHER" th:text="Other">
+    </p>
+    <p> Name: <input type="text" th:field="*{name}" ></p>
+    <p> <input type="submit" value="Create"></p>
+</form>
+</body>
+</html>

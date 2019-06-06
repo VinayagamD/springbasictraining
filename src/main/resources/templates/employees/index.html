@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employees</title>
+</head>
+<body>
+    <h1>Employee List</h1>
+    <a th:href="@{employees/create}">Create Employee</a>
+    <hr>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Mobile Number</th>
+            <th>Gender</th>
+        </tr>
+
+        </thead>
+        <tr th:each="employee : ${employees}">
+            <td><a th:href="@{'/employees/'+${employee.id}}" th:text="${employee.id}"></a></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.mobileNumber}"></td>
+            <td th:text="${employee.gender}"></td>
+        </tr>
+    </table>
+</body>
+</html>
