@@ -11,14 +11,14 @@
 <h1>Create Employee</h1>
 <hr>
 
-<form action="#" th:action="@{/employees/save}" th:object="${employee}" method="post">
+<form action="#" th:action="@{'/employees/'+${employee.id}+'/update'}" th:object="${employee}" method="post">
     <p> Mobile Number: <input type="number" th:field="*{mobileNumber}" ></p>
-    <p> Gender: <input type="radio" th:field="*{gender}" value="MALE" th:text="Male">
+    <p> Gender: <input type="radio" th:field="*{gender}"  value="MALE" th:text="Male">
                 <input type="radio" th:field="*{gender}" value="FEMALE" th:text="Female">
                 <input type="radio" th:field="*{gender}" value="OTHER" th:text="Other">
     </p>
     <p> Name: <input type="text" th:field="*{name}" ></p>
-    <p> <input type="submit" value="Create"></p>
+    <p> <input type="submit" value="Update"></p>
 </form>
 </body>
 </html>

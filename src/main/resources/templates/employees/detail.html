@@ -13,5 +13,13 @@
 <p>Name <span th:text="${employee.name}"></span></p>
 <p>Mobile Number <span th:text="${employee.mobileNumber}"></span></p>
 <p>Gender <span th:text="${employee.gender}"></span></p>
+
+<hr>
+
+<a th:href="@{'/employees/'}"> Return to employee list</a>
+<a th:href="@{'/employees/'+${employee.id}+'/edit'}"> Edit Employee</a>
+<a th:href="@{'/employees/'+${employee.id}+'/delete'}"> Delete Employee</a>
+
+
 </body>
 </html>
